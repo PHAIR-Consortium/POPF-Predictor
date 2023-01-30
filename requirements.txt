@@ -1,0 +1,8 @@
+imbalanced_learn==0.9.0
+imblearn==0.0
+matplotlib==3.5.3
+numpy==1.21.6
+pandas==1.1.5
+scikit_learn==1.2.1
+scipy==1.7.3
+sdv==0.17.1
