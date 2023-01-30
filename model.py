@@ -37,15 +37,11 @@ def validate_model(df, models):
             open(file_extension.split('validate')[0] + 'training_models/' + model + '_features.pkl', 'rb'))
         scaler = pickle.load(
             open(file_extension.split('validate')[0] + 'training_models/' + model + '_scaler.pkl', 'rb'))
-        x_train = pickle.load(
-            open(file_extension.split('validate')[0] + 'training_models/' + model + '_x_train.pkl', 'rb'))
-        y_train = pickle.load(
-            open(file_extension.split('validate')[0] + 'training_models/' + model + '_y_train.pkl', 'rb'))
 
         df_validate = preprocess_test_data(df, scaler, features)
         x_val, y_val = df_validate.to_numpy()[:, :-1], df_validate.Event.to_numpy()
 
-        metrics = get_validation_metrics(best_grid, x_train, y_train, x_val, y_val, model)
+        metrics = get_validation_metrics(best_grid, x_val, y_val, model)
         get_results(results, metrics)
         save_results(results, model)
         save_confusion_matrix(results, model)

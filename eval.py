@@ -37,11 +37,10 @@ def get_metrics(real_values, pred_values, pred_prob, results):
     return results
 
 
-def get_validation_metrics(best_grid, x_train, y_train, x_test, y_test, model):
+def get_validation_metrics(best_grid, x_test, y_test, model):
     metrics = defaultdict(list)
     iterations = 50 if model == 'rf' else 1
     for i in range(iterations):
-        best_grid.fit(x_train, y_train)
         y_pred = best_grid.predict(x_test)
         pred_prob = best_grid.predict_proba(x_test)[:, 1]
         metrics = get_metrics(y_test, y_pred, pred_prob, metrics)
@@ -73,7 +72,7 @@ def save_confusion_matrix(results, model):
 
 
 def save_results(results, model):
-    metrics = list(results.keys())[0:7]
+    metrics = list(results.keys())[1:8]
     mean_results = [np.mean(results[metric]) for metric in metrics]
     std_results = [np.std(results[metric]) for metric in metrics]
 

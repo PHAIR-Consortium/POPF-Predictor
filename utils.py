@@ -161,8 +161,6 @@ def get_best_grid(x_train, y_train, model):
 def save_best_model(results, best_grid, x_test, y_test, features, scaler, model):
     if max(results['AUC']) == results['AUC'][len(results['AUC']) - 1]:
         pickle.dump(best_grid, open(file_extension + '_models/' + model + '_model.pkl', 'wb'))
-        pickle.dump(x_test, open(file_extension + '_models/' + model + '_x_train.pkl', 'wb'))
-        pickle.dump(y_test, open(file_extension + '_models/' + model + '_y_train.pkl', 'wb'))
         pickle.dump(x_test, open(file_extension + '_models/' + model + '_x_test.pkl', 'wb'))
         pickle.dump(y_test, open(file_extension + '_models/' + model + '_y_test.pkl', 'wb'))
         pickle.dump(features, open(file_extension + '_models/' + model + '_features.pkl', 'wb'))
