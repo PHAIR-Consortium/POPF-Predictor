@@ -33,6 +33,24 @@ Follow these steps to run the POPF predictor:
     
     2.2 Set the model name under ```file_extension```. The model name must contain either ```training``` or ```validate```, depending on your use case. For example, if you set ```file_extension``` to ```POPF_training```, your key file must be saved as ```data/db_basis_POPF_training.xlsx``` and your radiomics file must be saved as ```data/POPF_training_radiomics.xlsx```. Trained models will be saved in the folder ```POPF_training_models``` and results will be saved under ```POPF_training_results```.
 
+```
+POPF-Predictor
+├── data
+│   └── POPF_training_radiomics.xlsx
+│   └── db_basis_POPF_training.xlsx
+├── POPF_training_models
+│   └── rf_scaler.pkl
+│   └── rf_rmodel.pkl
+│   └── rf_features.pkl
+│   └── rf_x_train.pkl
+│   └── rf_y_train.pkl
+├── POPF_training_results
+│   └── results.csv
+│   └── rf_roc_curve.png
+│   └── rf_jitter_scores.png
+│   └── rf_confusion_matrix.png 
+```
+
 3. The POPF predictor needs to know which settings to follow for training. For this you need to specify several variables in ```settings.py```:
  
   3.1 Select the use of preoprocessing methods over- and undersampling (```oversample``` and ```undersample```), noise (```noise```), lasso feature reduction (```lasso```). 
