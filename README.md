@@ -49,8 +49,8 @@ POPF-Predictor
 │   └── rf_scaler.pkl
 │   └── rf_rmodel.pkl
 │   └── rf_features.pkl
-│   └── rf_x_train.pkl
-│   └── rf_y_train.pkl
+│   └── rf_x_test.pkl
+│   └── rf_y_test.pkl
 ├── POPF_training_results
 │   └── results.csv
 │   └── rf_roc_curve.png
