@@ -9,7 +9,7 @@ The POPF Predictor makes the following contributions to the field:
   2. **Out-of-the-box prediction method:** The POPF predictor is the first plug-and-play tool for POPF prediction. Inexperienced users can use the POPF predictor without need for manual intervention.
   3. **Externally validated:** The POPF predictor is the first publically available **and** externally validated POPF prediction model. The model was developed and internally tested using CT-scans of 118 patients from the Amsterdam University Medical Center. The external test set comprised 57 patients from the Verona University Hospital. The AUROC of the random forest was 0.80 (95% CI: 0.69 – 0.92) in the external test set. The calibration curve indicated that the model's prediction were reliable. The discrimination of the RAD-FRS in the external test set was similar to the FRS (AUC: 0.79) and ua-FRS (AUC: 0.79). 
 
-# Installation 
+# Installation and Setup
 
 
 The POPF predictor has been tested on MacOS (Monterey, Version 12.6) and Windows 11. We do not provide support for other operating systems.
@@ -25,8 +25,6 @@ For more information about the POPF predictor, please read the following paper:
 TODO: add citation here
 
 Please also cite this paper if you are using the POPF predictor for your research!
-
-# Training
 
 Follow these steps to run the POPF predictor:
 
@@ -67,4 +65,14 @@ POPF-Predictor
    3.2 Select which models you would like to train under ```models``` (choice of support vector machine ```svm```, logistic regression ```lr```, k-nearest neighbor ```knn```, and random forest ```rf```).
   
    3.3 Specify how many times you wish to train each model under ```num_loops```. 
-  
+   
+   
+# Training
+ 
+To train the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```training```) in ```settings.py```. Finally, run the function ```main.py```.
+
+
+# Validation
+ 
+To validate the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```validate```) in ```settings.py```. Finally, run the function ```main.py```.
+
