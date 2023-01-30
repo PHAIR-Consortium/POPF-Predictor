@@ -55,7 +55,7 @@ POPF-Predictor
 │   └── results.csv
 │   └── rf_roc_curve.png
 │   └── rf_jitter_scores.png
-│   └── rf_confusion_matrix.png 
+│   └── rf_confusion_matrix.csv
 ```
 
 3. The POPF predictor needs to know which settings to follow for training. For this you need to specify several variables in ```settings.py```:
