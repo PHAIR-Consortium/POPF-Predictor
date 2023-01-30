@@ -55,9 +55,9 @@ POPF-Predictor
 
 3. The POPF predictor needs to know which settings to follow for training. For this you need to specify several variables in ```settings.py```:
  
-  3.1 Select the use of preoprocessing methods over- and undersampling (```oversample``` and ```undersample```), noise (```noise```), lasso feature reduction (```lasso```). 
+   3.1 Select the use of preoprocessing methods over- and undersampling (```oversample``` and ```undersample```), noise (```noise```), lasso feature reduction (```lasso```). 
   
-  3.2 Select which models you would like to train under ```models``` (choice of support vector machine ```svm```, logistic regression ```lr```, k-nearest neighbor ```knn```, and random forest ```rf```).
+   3.2 Select which models you would like to train under ```models``` (choice of support vector machine ```svm```, logistic regression ```lr```, k-nearest neighbor ```knn```, and random forest ```rf```).
   
-  3.3 Specify how many times you wish to train each model under ```num_loops```. 
+   3.3 Specify how many times you wish to train each model under ```num_loops```. 
   
