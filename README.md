@@ -1,6 +1,13 @@
 # POPF-Predictor
-Binary classifier for predicting POPF - code PLUS trained and externally validated model 
+Postoperative pancreatic fistula (POPF) is a complication that can arise following a pancreatoduodenectomy (PD), that negatively impacts short-term and long-term outcomes and cancer recurrence rates. Accurate risk stratification of POPF in the preoperative setting can assist in determining the best surgical approach for high-risk or frail patients. In the perioperative period, high-risk patients for POPF may be candidates for prophylactic treatment with somatostatin analogs. In patients with cystic lesions of the pancreatic head, accurate risk stratification of POPF can help to make the decision of whether to proceed with a PD or consider alternative approaches.4 A recent study demonstrated improved postoperative outcomes for high-risk patients who underwent a total pancreatectomy compared to those who underwent a PD.
 
+Previous research has introduced several POPF prediction models, including the fistula risk score (FRS) by Callery et al. and the updated alternative fistula risk score (ua-FRS) by Mungroop et al.These risk models are commonly used but have limitations, including their reliance on subjective measurements (e.g., intra-operative assessment of the texture of the pancreas) and their inability to provide predictions before surgery.
+Radiomics is an approach to extract features from medical images. It enables objective approaches for texture analysis and can uncover new parameters, some invisible to the human eye or mind.  Previous studies have investigated the use of computed tomography (CT)-based radiomics models to predict POPF and showed promising results. 
+
+The POPF Predictor makes the following contributions to the field:
+  1. **Standardized baseline:** The POPF predictor is the first standardized POPF prediction benchmark. Without manual effort, researchers can compare their predcition models against the POPF predictor to provide meaningful evidence for proposed improvements.
+  2. **Out-of-the-box prediction method:** The POPF predictor is the first plug-and-play tool for POPF prediction. Inexperienced users can use the POPF predictor without need for manual intervention.
+  3. **Externally validated:** The POPF predictor is the first publically available **and** externally validated POPF prediction model. The model was developed and internally tested using CT-scans of 118 patients from the Amsterdam University Medical Center. The external test set comprised 57 patients from the Verona University Hospital. The AUROC of the random forest was 0.80 (95% CI: 0.69 – 0.92) in the external test set. The calibration curve indicated that the model's prediction were reliable. The discrimination of the RAD-FRS in the external test set was similar to the FRS (AUC: 0.79) and ua-FRS (AUC: 0.79). 
 
 # Installation 
 
