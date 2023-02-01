@@ -5,7 +5,7 @@ from utils import *
 
 
 def plot_jitter_curve(model, x_test=None, y_test=None):
-    data_path = file_extension.split('_validate')[0] + '_training_models/' + model
+    data_path = file_extension.split('_validate')[0].split('_training')[0] + '_training_models/' + model
     best_grid = pickle.load(open(data_path + '_model.pkl', 'rb'))
     if x_test is None: x_test = pickle.load(open(data_path + '_x_test.pkl', 'rb'))
     if y_test is None: y_test = pickle.load(open(data_path + '_y_test.pkl', 'rb'))

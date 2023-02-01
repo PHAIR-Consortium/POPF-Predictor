@@ -13,6 +13,7 @@ setup(
         'scikit_learn>=1.0.2',
         'scipy>=1.7.3',
         'sdv>=0.17.1',
+        'openpyxl'
     ],
     keywords=['deep learning', 'radiomics', 'medical prediction models', 'medical image analysis','medical image segmentation', 'POPF-Predictor'],
     author='PHAIR-Amsterdam',
