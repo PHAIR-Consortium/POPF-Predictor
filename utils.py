@@ -155,7 +155,7 @@ def get_best_grid(x_train, y_train, model):
     grid = GridSearchCV(classifiers[model], param_grid=param_grid, scoring="roc_auc", refit=True, cv=5, n_jobs=-1,
                         verbose=0)
     grid.fit(x_train, y_train)
-    return grid.best_estimator_
+    return grid
 
 
 def save_model(best_grid, x_test, y_test, features, scaler, model):

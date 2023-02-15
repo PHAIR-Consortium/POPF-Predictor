@@ -1,7 +1,7 @@
 # POPF Predictor
-Postoperative pancreatic fistula (POPF) is a complication that can arise following a pancreatoduodenectomy (PD), that negatively impacts short-term and long-term outcomes and cancer recurrence rates. Accurate risk stratification of POPF in the preoperative setting can assist in determining the best surgical approach for high-risk or frail patients. In the perioperative period, high-risk patients for POPF may be candidates for prophylactic treatment with somatostatin analogs. In patients with cystic lesions of the pancreatic head, accurate risk stratification of POPF can help to make the decision of whether to proceed with a PD or consider alternative approaches.4 A recent study demonstrated improved postoperative outcomes for high-risk patients who underwent a total pancreatectomy compared to those who underwent a PD.
+Postoperative pancreatic fistula (POPF) is a complication that can arise following a pancreatoduodenectomy (PD), that negatively impacts short-term and long-term outcomes and cancer recurrence rates. Accurate risk stratification of POPF in the preoperative setting can assist in determining the best surgical approach for high-risk or frail patients. In the perioperative period, high-risk patients for POPF may be candidates for prophylactic treatment with somatostatin analogs. In patients with cystic lesions of the pancreatic head, accurate risk stratification of POPF can help to make the decision of whether to proceed with a PD or consider alternative approaches. A recent study demonstrated improved postoperative outcomes for high-risk patients who underwent a total pancreatectomy compared to those who underwent a PD.
 
-Previous research has introduced several POPF prediction models, including the fistula risk score (FRS) by Callery et al. and the updated alternative fistula risk score (ua-FRS) by Mungroop et al.These risk models are commonly used but have limitations, including their reliance on subjective measurements (e.g., intra-operative assessment of the texture of the pancreas) and their inability to provide predictions before surgery.
+Previous research has introduced several POPF prediction models, including the fistula risk score (FRS) by Callery et al. and the updated alternative fistula risk score (ua-FRS) by Mungroop et al.These risk models are commonly used but have some limitations, including their reliance on subjective measurements (e.g., intra-operative assessment of the texture of the pancreas) and their inability to provide predictions before surgery.
 Radiomics is an approach to extract features from medical images. It enables objective approaches for texture analysis and can uncover new parameters, some invisible to the human eye or mind.  Previous studies have investigated the use of computed tomography (CT)-based radiomics models to predict POPF and showed promising results. 
 
 The POPF Predictor makes the following contributions to the field:
@@ -55,7 +55,7 @@ POPF-Predictor
 │   └── results.csv
 │   └── rf_roc_curve.png
 │   └── rf_jitter_scores.png
-│   └── rf_confusion_matrix.png 
+│   └── rf_confusion_matrix.csv
 ```
 
 3. The POPF predictor needs to know which settings to follow for training. For this you need to specify several variables in ```settings.py```:
@@ -74,5 +74,5 @@ To train the POPF predictor on your own dataset, follow the instruction under In
 
 # Validation
  
-To validate the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```validate```) in ```settings.py```. Finally, run the function ```main.py```.
+To validate the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```validate```) in ```settings.py```. Unzip the pre-trained POPF model from github and place it in a folder named according to your dataset (see file structure above). Finally, run the function ```main.py```.
 
