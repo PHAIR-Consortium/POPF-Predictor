@@ -23,7 +23,7 @@ def get_metrics(real_values, pred_values, pred_prob, results):
     results['npv'].append(npv)
 
     sensitivity = 0 if fp + fn == 0 else round(tp / (tp + fn), 4)
-    results['sensitivty'].append(sensitivity)
+    results['sensitivity'].append(sensitivity)
 
     specificity = 0 if tn + fp == 0 else round(tn / (tn + fp), 4)
     results['specificity'].append(specificity)
@@ -37,15 +37,13 @@ def get_metrics(real_values, pred_values, pred_prob, results):
     return results
 
 
-def get_validation_metrics(best_grid, x_test, y_test, model):
+def get_validation_metrics(best_grid, x_test, y_test):
     metrics = defaultdict(list)
-    iterations = 50 if model == 'rf' else 1
-    for i in range(iterations):
-        y_pred = best_grid.predict(x_test)
-        pred_prob = best_grid.predict_proba(x_test)[:, 1]
-        metrics = get_metrics(y_test, y_pred, pred_prob, metrics)
+    y_pred = best_grid.predict(x_test)
+    pred_prob = best_grid.predict_proba(x_test)[:, 1]
+    metrics = get_metrics(y_test, y_pred, pred_prob, metrics)
 
-    return metrics
+    return metrics, pred_prob
 
 
 def get_results(results, metrics):
@@ -57,13 +55,15 @@ def get_results(results, metrics):
     return results
 
 
-def save_confusion_matrix(results, model):
-    tn = np.mean([results['CM'][i][0][0] for i in range(len(results['CM']))])
-    fn = np.mean([results['CM'][i][1][0] for i in range(len(results['CM']))])
-    tp = np.mean([results['CM'][i][1][1] for i in range(len(results['CM']))])
-    fp = np.mean([results['CM'][i][0][1] for i in range(len(results['CM']))])
+def save_confusion_matrix(results):
+    cm = results['CM'][len(results['CM'])-1]
+    tn = cm[0][0]
+    fn = cm[1][0]
+    tp = cm[1][1]
+    fp = cm[0][1]
 
-    f = open(file_extension + '_results/' + model + '_confusion_matrix.csv', 'a')
+    # open file and overwrite existing file
+    f = open(file_extension + '_results/confusion_matrix.csv', 'w')
     writer = csv.writer(f)
     writer.writerow(['Confusion Matrix'])
     writer.writerow(['TP, FP', tp, fp])
@@ -71,15 +71,17 @@ def save_confusion_matrix(results, model):
     f.close()
 
 
-def save_results(results, model):
+def save_results(results, model, features, patients, true_events, pred_prob):
     metrics = list(results.keys())[1:8]
-    mean_results = [np.mean(results[metric]) for metric in metrics]
-    std_results = [np.std(results[metric]) for metric in metrics]
+    best_results = [results[metric][len(results[metric])-1] for metric in metrics]
 
-    f = open(file_extension + '_results/results.csv', 'a')
+    f = open(file_extension + '_results/results.csv', 'w')
     writer = csv.writer(f)
-    writer.writerow(['score'] + metrics)
-    writer.writerow(['Results for ' + model])
-    writer.writerow(['mean'] + mean_results)
-    writer.writerow(['std'] + std_results)
+    writer.writerow(['Best results for ' + model])
+    writer.writerow(metrics)
+    writer.writerow(best_results)
+    writer.writerow(['Model features', str(features)])
+    writer.writerow(['Patients in test set', str(patients)])
+    writer.writerow(['True events', str(true_events)])
+    writer.writerow(['Predicted probabilities', str(pred_prob)])
     f.close()

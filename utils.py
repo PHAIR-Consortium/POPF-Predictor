@@ -158,13 +158,12 @@ def get_best_grid(x_train, y_train, model):
     return grid.best_estimator_
 
 
-def save_best_model(results, best_grid, x_test, y_test, features, scaler, model):
-    if max(results['AUC']) == results['AUC'][len(results['AUC']) - 1]:
-        pickle.dump(best_grid, open(file_extension + '_models/' + model + '_model.pkl', 'wb'))
-        pickle.dump(x_test, open(file_extension + '_models/' + model + '_x_test.pkl', 'wb'))
-        pickle.dump(y_test, open(file_extension + '_models/' + model + '_y_test.pkl', 'wb'))
-        pickle.dump(features, open(file_extension + '_models/' + model + '_features.pkl', 'wb'))
-        pickle.dump(scaler, open(file_extension + '_models/' + model + '_scaler.pkl', 'wb'))
+def save_model(best_grid, x_test, y_test, features, scaler, model):
+    pickle.dump(best_grid, open(file_extension + '_models/' + model + '_model.pkl', 'wb'))
+    pickle.dump(x_test, open(file_extension + '_models/' + model + '_x_test.pkl', 'wb'))
+    pickle.dump(y_test, open(file_extension + '_models/' + model + '_y_test.pkl', 'wb'))
+    pickle.dump(features, open(file_extension + '_models/' + model + '_features.pkl', 'wb'))
+    pickle.dump(scaler, open(file_extension + '_models/' + model + '_scaler.pkl', 'wb'))
 
 
 def jitter(x, scale=0.1):
