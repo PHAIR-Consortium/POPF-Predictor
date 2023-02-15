@@ -74,5 +74,5 @@ To train the POPF predictor on your own dataset, follow the instruction under In
 
 # Validation
  
-To validate the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```validate```) in ```settings.py```. Finally, run the function ```main.py```.
+To validate the POPF predictor on your own dataset, follow the instruction under Installation (2) to store your radiomics and key file, set the file extension (must end with ```validate```) in ```settings.py```. Unzip the pre-trained POPF model from github and place it in a folder named according to your dataset (see file structure above). Finally, run the function ```main.py```.
 
