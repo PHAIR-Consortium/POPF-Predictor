@@ -14,6 +14,7 @@ models = ['svm', 'lr', 'knn', 'rf']
 # Specify number of models you would like to train
 num_loops = 25
 
+# Specify test set size for train_test_split
 test_set_size = 0.1
 
 if 'validate' in file_extension: validate, train = 1, 0
