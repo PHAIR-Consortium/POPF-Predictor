@@ -22,7 +22,7 @@ Python 2 is deprecated and not supported. Please make sure you are using Python 
 
 For more information about the POPF predictor, please read the following paper:
 
-TODO: add citation here
+Ingwersen EW, Bereska JI, Balduzzi A, Janssen BV, Besselink MG, Kazemier G, Marchegiani G, Malleo G, Marquering HA, Nio CY, de Robertis R, Salvia R, Steyerberg EW, Stoker J, Struik F, Verpalen IM, Daams F; Pancreatobiliary and Hepatic Artificial Intelligence Research (PHAIR) consortium. Radiomics preoperative-Fistula Risk Score (RAD-FRS) for pancreatoduodenectomy: development and external validation. BJS Open. 2023 Sep 5;7(5):zrad100. doi: 10.1093/bjsopen/zrad100. PMID: 37811791.
 
 Please also cite this paper if you are using the POPF predictor for your research!
 
