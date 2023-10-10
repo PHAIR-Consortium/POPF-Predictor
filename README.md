@@ -1,5 +1,3 @@
-####### CAUTION: NOT YET INTENDED FOR CLINICAL USE, BUT FOR REVIEWER PURPOSES ONLY #######
-
 # POPF Predictor
 Postoperative pancreatic fistula (POPF) is a complication that can arise following a pancreatoduodenectomy (PD), that negatively impacts short-term and long-term outcomes and cancer recurrence rates. Accurate risk stratification of POPF in the preoperative setting can assist in determining the best surgical approach for high-risk or frail patients. In the perioperative period, high-risk patients for POPF may be candidates for prophylactic treatment with somatostatin analogs. In patients with cystic lesions of the pancreatic head, accurate risk stratification of POPF can help to make the decision of whether to proceed with a PD or consider alternative approaches. A recent study demonstrated improved postoperative outcomes for high-risk patients who underwent a total pancreatectomy compared to those who underwent a PD.
 
